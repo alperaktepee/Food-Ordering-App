@@ -7,10 +7,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': '#195CCE',
-
+        primary: "#ffbe33",
+        secondary: "#222831",
+      },
+      fontFamily: {
+        dancing: ["Dancing Script", "cursive"],
       },
     },
   },
   plugins: [],
-}
+};
