@@ -1,15 +1,29 @@
 import Logo from "./ui/Logo";
+import { useState } from "react";
 import { FaUserAlt, FaShoppingCart, FaSearch } from "react-icons/fa";
+import Search from "./ui/Search";
+import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 
 const Header = () => {
+  const [isSearchModal, setIsSearchModal] = useState(false);
+  const [isMenuModal, setIsMenuModal] = useState(false);
+
+  const modalHandler = () => {
+    setIsSearchModal(true);
+  };
+
   return (
     <div className="h-[5.5rem] bg-secondary">
       <div className="container mx-auto text-white flex justify-around items-center h-full">
         <div>
           <Logo />
         </div>
-        <nav>
-          <ul className="flex gap-x-2">
+        <nav
+          className={`sm:static absolute top-0 left-0 sm:w-auto sm:h-auto w-full h-full sm:text-white text-black sm:bg-transparent bg-white md:flex hidden ${
+            isMenuModal === true && "!grid place-content-center"
+          }`}
+        >
+          <ul className="flex gap-x-2 sm:flex-row flex-col">
             <li className="px-2 py-5 hover:text-primary cursor-pointer">
               <a href="">HOME</a>
             </li>
@@ -23,23 +37,39 @@ const Header = () => {
               <a href="">BOOK TABLE</a>
             </li>
           </ul>
+          {isMenuModal && (
+            <button
+              className="absolute  top-4 right-4 z-50"
+              onClick={() => setIsMenuModal(false)}
+            >
+              <GiCancel size={25} className=" transition-all" />
+            </button>
+          )}
         </nav>
         <div className="flex gap-x-4 items-center">
           <a href="">
-            <FaUserAlt />
+            <FaUserAlt className="hover:text-primary transition-all" />
           </a>
           <a href="">
-            <FaShoppingCart />
+            <FaShoppingCart className="hover:text-primary transition-all" />
           </a>
 
-          <a href="">
-            <FaSearch />
-          </a>
-          <a href="">
+          <button onClick={modalHandler}>
+            <FaSearch className="hover:text-primary transition-all" />
+          </button>
+          <a href="" className="md:inline-block hidden">
             <button className="btn-primary">Order Online</button>
           </a>
+          <button className="md:hidden inline-block">
+            <GiHamburgerMenu
+              onClick={() => setIsMenuModal(true)}
+              className="text-2xl hover:text-primary
+             transition-all"
+            />
+          </button>
         </div>
       </div>
+      {isSearchModal && <Search setIsSearchModal={setIsSearchModal} />}
     </div>
   );
 };
