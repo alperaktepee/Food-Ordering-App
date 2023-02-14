@@ -3,23 +3,25 @@ import { useState } from "react";
 import { FaUserAlt, FaShoppingCart, FaSearch } from "react-icons/fa";
 import Search from "./ui/Search";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
+import {useRouter} from 'next/router'
 
 const Header = () => {
   const [isSearchModal, setIsSearchModal] = useState(false);
   const [isMenuModal, setIsMenuModal] = useState(false);
-
+const router = useRouter();
+console.log("router as path:",router.asPath);
   const modalHandler = () => {
     setIsSearchModal(true);
   };
 
   return (
-    <div className="h-[5.5rem] bg-secondary">
+    <div className={`h-[5.5rem] relative z-40 ${router.asPath==="/" ? "bg-transparent" : "bg-secondary"}`}>
       <div className="container mx-auto text-white flex justify-around items-center h-full">
         <div>
           <Logo />
         </div>
         <nav
-          className={`sm:static absolute top-0 left-0 sm:w-auto sm:h-auto w-full h-full sm:text-white text-black sm:bg-transparent bg-white md:flex hidden ${
+          className={`sm:static absolute top-0 left-0 sm:w-auto sm:h-auto w-full h-screen sm:text-white text-black sm:bg-transparent bg-white md:flex hidden ${
             isMenuModal === true && "!grid place-content-center"
           }`}
         >

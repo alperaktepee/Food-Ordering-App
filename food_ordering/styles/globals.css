@@ -19,3 +19,11 @@ body {
 @apply text-white px-8 py-2 rounded-3xl bg-primary cursor-pointer hover:opacity-90 transition-all;
 
 }
+
+.slick-dots{
+  @apply text-left left-12 sm:left-32;
+}
+
+.slick-dots .slick-active div {
+  @apply bg-primary;
+}
