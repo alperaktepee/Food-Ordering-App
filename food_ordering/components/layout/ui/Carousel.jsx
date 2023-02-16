@@ -34,7 +34,7 @@ const Carousel = () => {
       </div>
     </div>
     <div>
-    <Slider className="absolute top-64 container w-4/5  mx-auto text-white" {...settings}>
+    <Slider className="absolute top-36 container w-4/5  mx-auto text-white" {...settings}>
         
         <div className="pl-12 sm:pl-32">
           <Title addClass="text-[36px] sm:text-[54px] my-2">
