@@ -9,7 +9,7 @@ const MenuItem = () => {
      
       </div>
       <div className="px-5 py-2">
-        <h4 className="my-2 text-xl">Delicious Pizza</h4>
+        <h4 className="my-2">Delicious Pizza</h4>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet sequi
           minima dolorem nobis accusantium obcaecati et provident, quas facere
