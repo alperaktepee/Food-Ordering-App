@@ -5,15 +5,44 @@
 
 
 
+@layer base {
+  h1 {
+    @apply text-4xl;
+    @apply font-bold;
+  }
+  h2 {
+    @apply text-3xl;
+    @apply font-bold;
+  }
+  h3 {
+    @apply text-2xl;
+    @apply font-bold;
+  }
+  h4 {
+    @apply text-xl;
+    @apply font-semibold;
+  }
+  h5 {
+    @apply text-lg;
+    @apply font-semibold;
+  }
+  h6 {
+    @apply text-sm;
+    @apply font-semibold;
+  }
+}
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'Open Sans',sans-serif;
 }
+
 * {
   box-sizing: border-box;
 }
+
+
 
 .btn-primary{
 @apply text-white px-8 py-2 rounded-3xl bg-primary cursor-pointer hover:opacity-90 transition-all;
@@ -81,3 +110,4 @@ body {
     transform: scale(1.1);
   }
 }
+
