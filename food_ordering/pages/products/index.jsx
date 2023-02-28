@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Title from "../../components/layout/ui/Title";
 import Head from "next/head";
+import { FaShoppingCart } from "react-icons/fa";
 const Products = () => {
   return (
     <>
@@ -33,30 +34,73 @@ const Products = () => {
           rel="stylesheet"
         />
       </Head>
-      <div className="py-40 flex items-center justify-center gap-20">
-        <div className="relative w-[450px] h-[450px]">
-          <Image src="/images/f1.png" alt="" layout="fill" />
+      <div className="py-40 flex items-center justify-center gap-x-20 flex-col md:flex-row">
+        <div className="md:ml-10">
+          <div className="relative lg:w-[400px] lg:h-[400px] md:w-[300px] md:h-[300px] w-[200px] h-[200px] lg:mx-16 ">
+            <Image src="/images/f1.png" alt="" layout="fill" />
+          </div>
         </div>
-        <div className="flex-1">
-          <Title addClass="text-6xl">Good Pizza</Title>
-          <span>$10</span>
-          <p>
+
+        <div className="flex flex-col">
+          <Title addClass="text-4xl text-center md:text-start">
+            Good Pizza
+          </Title>
+          <span className="text-primary text-2xl font-bold underline underline-offset-2 inline-block my-2 text-center md:text-start">
+            $10
+          </span>
+          <p className="text-sm my-4 mx-5 text-center md:text-start md:mx-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ea
             repellat, velit in impedit, facilis, molestias fugiat pariatur amet
             magni officia dolor iste laudantium assumenda ab inventore earum
             asperiores aspernatur.
           </p>
-          <h4>Choose The Size</h4>
-          <div className="flex items-center gap-20">
-            <div className="relative w-12 h-12">
+          <h4 className="font-bold text-center md:text-start">
+            Choose The Size
+          </h4>
+          <div className="flex items-center gap-20 justify-center md:justify-start my-3">
+            <div className="relative w-12 h-12 ">
               <Image src="/images/size.png" alt="" layout="fill" />
+              <span className="absolute top-0 -right-7 text-sm rounded-lg bg-primary px-1">
+                Small
+              </span>
             </div>
             <div className="relative w-16 h-16">
               <Image src="/images/size.png" alt="" layout="fill" />
+              <span className="absolute top-0 -right-9 text-sm rounded-lg bg-primary px-1">
+                Medium
+              </span>
             </div>
             <div className="relative w-20 h-20">
               <Image src="/images/size.png" alt="" layout="fill" />
+              <span className="absolute top-0 -right-4 rounded-lg bg-primary px-1 text-sm">
+                Large
+              </span>
             </div>
+          </div>
+          <h4 className="my-2 font-bold text-center md:text-start">
+            Choose Additional Ingredients
+          </h4>
+          <div className="flex gap-x-4 md:justify-start justify-center">
+            <label className="flex items-center" htmlFor="">
+              <input type="checkbox" className="w-5 h-5 accent-primary" />
+              <span className="text-sm font-semibold px-1">Ketchup</span>
+            </label>
+            <label className="flex items-center" htmlFor="">
+              <input type="checkbox" className="w-5 h-5 accent-primary" />
+              <span className="text-sm font-semibold px-1">Mayonnaise</span>
+            </label>
+            <label className="flex items-center" htmlFor="">
+              <input type="checkbox" className="w-5 h-5 accent-primary" />
+              <span className="text-sm font-semibold px-1">Hot Sauce</span>
+            </label>
+          </div>
+          <div className="flex md:justify-start justify-center">
+            <button className="btn-primary mt-5 flex items-center gap-x-2 w-44">
+              Add to Cart
+              <span>
+                <FaShoppingCart />
+              </span>
+            </button>
           </div>
         </div>
       </div>
