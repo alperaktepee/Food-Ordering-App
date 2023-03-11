@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import Home from "./home";
 import Header from "../components/layout/Header";
+import Input from "../components/Input";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,7 +39,7 @@ export default function Index() {
       </Head>
       <Header />
       <Home />
-      
+
       {/* <h1 className="text-center h-screen bg-primary">Food Ordering</h1> */}
     </>
   );
