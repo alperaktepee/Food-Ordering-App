@@ -1,8 +1,72 @@
 import React from "react";
 import Input from "../../Input";
 import Title from "../ui/Title";
+import { useFormik } from 'formik'
+
+
 
 const Reservation = () => {
+
+
+  const onSubmit = async (values, actions) => {
+    alert(JSON.stringify(values, null, 2));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    actions.resetForm();
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      fullname: '',
+      phoneNumber: '',
+      email: '',
+      people: '',
+      date: '',
+    },
+    onSubmit,
+    
+  });
+
+  console.log(formik.values)
+  const inputs = [
+    {
+      id: 1,
+      name: "fullname",
+      type: "text",
+      placeholder: "Your fullname",
+      value:formik.values.fullname
+    },
+    {
+      id: 2,
+      name: "phoneNumber",
+      type: "number",
+      placeholder: "Your phone number",
+      value:formik.values.phoneNumber
+
+    },
+    {
+      id: 3,
+      name: "email",
+      type: "email",
+      placeholder: "Your e-mail address",
+      value:formik.values.email
+
+    },    {
+      id: 4,
+      name: "people",
+      type: "number",
+      placeholder: "How many people ?",
+      value:formik.values.people
+
+    },
+    {
+      id: 5,
+      name: "date",
+      type: "datetime-local",
+      placeholder: "",
+      value:formik.values.date
+
+    },
+  ];
   return (
     <div className=" sm:mx-12 py-12">
       <div>
@@ -11,17 +75,13 @@ const Reservation = () => {
         </Title>
       </div>
       <div className="flex justify-between flex-wrap lg:flex-nowrap ">
-        <div className="lg:flex-1 w-full flex flex-col items-center justify-start lg:ml-24 l mx-5 gap-y-3">
-          <Input />
-          <Input />
-          <Input />
-          <Input />
-          <Input />
-            <button className="btn-primary mt-5 mb-5">
-              BOOK NOW
-            </button>
-      
-        </div>
+        <form className="lg:flex-1 w-full flex flex-col items-center justify-start lg:ml-24 l mx-5 gap-y-3" onSubmit={formik.handleSubmit}>
+          {inputs.map((input) => (
+              <Input key={input.id} {...input} value={input.value} onChange={formik.handleChange} />  
+         ))}
+
+          <button type="submit" className="btn-primary mt-5 mb-5">BOOK NOW</button>
+        </form>
 
         <div className="flex lg:flex-1 justify-center w-full lg:mr-0">
           <iframe
