@@ -2,6 +2,7 @@ import React from "react";
 import Input from "../../Input";
 import Title from "../ui/Title";
 import { useFormik } from 'formik'
+import { reservationSchema } from "../../../schema/reservation";
 
 
 
@@ -23,6 +24,8 @@ const Reservation = () => {
       date: '',
     },
     onSubmit,
+    validationSchema:reservationSchema,
+
     
   });
 
@@ -33,14 +36,19 @@ const Reservation = () => {
       name: "fullname",
       type: "text",
       placeholder: "Your fullname",
-      value:formik.values.fullname
+      value:formik.values.fullname,
+      errorMessage:formik.errors.fullname,
+      touched:formik.touched.fullname,
     },
     {
       id: 2,
       name: "phoneNumber",
       type: "number",
       placeholder: "Your phone number",
-      value:formik.values.phoneNumber
+      value:formik.values.phoneNumber,
+      errorMessage:formik.errors.phoneNumber,
+      touched:formik.touched.phoneNumber,
+
 
     },
     {
@@ -48,14 +56,21 @@ const Reservation = () => {
       name: "email",
       type: "email",
       placeholder: "Your e-mail address",
-      value:formik.values.email
+      value:formik.values.email,
+      errorMessage:formik.errors.email,
+      touched:formik.touched.email,
+
 
     },    {
       id: 4,
       name: "people",
       type: "number",
       placeholder: "How many people ?",
-      value:formik.values.people
+      value:formik.values.people,
+      errorMessage:formik.errors.people,
+      touched:formik.touched.people,
+
+
 
     },
     {
@@ -63,7 +78,10 @@ const Reservation = () => {
       name: "date",
       type: "datetime-local",
       placeholder: "",
-      value:formik.values.date
+      value:formik.values.date,
+      errorMessage:formik.errors.date,
+      touched:formik.touched.date,
+
 
     },
   ];
@@ -77,7 +95,7 @@ const Reservation = () => {
       <div className="flex justify-between flex-wrap lg:flex-nowrap ">
         <form className="lg:flex-1 w-full flex flex-col items-center justify-start lg:ml-24 l mx-5 gap-y-3" onSubmit={formik.handleSubmit}>
           {inputs.map((input) => (
-              <Input key={input.id} {...input} value={input.value} onChange={formik.handleChange} />  
+              <Input key={input.id} {...input} value={input.value} errorMessage={input.errorMessage} onChange={formik.handleChange} onBlur={formik.handleBlur} />  
          ))}
 
           <button type="submit" className="btn-primary mt-5 mb-5">BOOK NOW</button>
