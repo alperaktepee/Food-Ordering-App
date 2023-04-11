@@ -3,7 +3,7 @@ import React from "react";
 
 const CustomerItem = () => {
   return (
-    <div className="">
+    <div className="mx-4">
       <div className="p-6 bg-secondary text-white rounded-[5px]">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
