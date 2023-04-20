@@ -4,9 +4,9 @@ import Title from '../ui/Title'
 
 const MenuWrapper = () => {
   return (
-    <div className='flex flex-col items-center mb-16'>
+    <div className='flex flex-col items-center mt-8'>
      <Title addClass="text-[40px]">Our Menu</Title>
-     <div className="mt-10">
+     <div className="mt-4">
         <button className="px-6 py-2 bg-secondary rounded-3xl text-white">All</button>
         <button className="mx-3">Burger</button>
         <button className="mx-3">Pizza</button>

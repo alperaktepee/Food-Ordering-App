@@ -4,7 +4,7 @@ import { FaUserAlt, FaShoppingCart, FaSearch } from "react-icons/fa";
 import Search from "./ui/Search";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 import {useRouter} from 'next/router'
-
+import Link from "next/link"
 const Header = () => {
   const [isSearchModal, setIsSearchModal] = useState(false);
   const [isMenuModal, setIsMenuModal] = useState(false);
@@ -27,16 +27,16 @@ console.log("router as path:",router.asPath);
         >
           <ul className="flex gap-x-2 sm:flex-row flex-col">
             <li className="px-2 py-5 hover:text-primary cursor-pointer">
-              <a href="">HOME</a>
+              <Link href="/">HOME</Link>
             </li>
             <li className="px-2 py-5 hover:text-primary cursor-pointer">
-              <a href="">MENU</a>
+              <Link href="/menu">MENU</Link>
             </li>
             <li className="px-2 py-5 hover:text-primary cursor-pointer">
-              <a href="">ABOUT</a>
+              <Link href="/about">ABOUT</Link>
             </li>
             <li className="px-2 py-5 hover:text-primary cursor-pointer">
-              <a href="">BOOK TABLE</a>
+              <Link href="/book-table">BOOK TABLE</Link>
             </li>
           </ul>
           {isMenuModal && (
