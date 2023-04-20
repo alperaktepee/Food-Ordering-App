@@ -1,11 +1,10 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import Home from "./home";
-import Header from "../components/layout/Header";
-import Footer from "../components/layout/Footer";
 
 
-const inter = Inter({ subsets: ["latin"] });
+
+
 
 export default function Index() {
   return (
@@ -37,9 +36,9 @@ export default function Index() {
           rel="stylesheet"
         />
       </Head>
-      <Header />
+
       <Home />
-      <Footer />
+
 
       {/* <h1 className="text-center h-screen bg-primary">Food Ordering</h1> */}
     </>
