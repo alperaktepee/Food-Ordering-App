@@ -12,6 +12,7 @@ export const reservationSchema = Yup.object({
     .email("E-mail is invalid."),
   people: Yup.number()
     .required("People field is required.")
-    .max(10, "Full name must be max 10 people."),
+    .max(10, " It must be max 10 people."),
   date: Yup.date().required("Date is required")
 });
+
