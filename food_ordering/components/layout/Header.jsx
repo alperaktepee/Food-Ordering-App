@@ -52,9 +52,9 @@ console.log("router as path:",router.asPath);
           <Link href="/auth/login">
             <FaUserAlt className="hover:text-primary transition-all" />
           </Link>
-          <a href="">
+          <Link href="/card">
             <FaShoppingCart className="hover:text-primary transition-all" />
-          </a>
+          </Link>
 
           <button onClick={modalHandler}>
             <FaSearch className="hover:text-primary transition-all" />
