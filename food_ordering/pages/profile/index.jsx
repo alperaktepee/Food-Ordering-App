@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FaHome, FaKey, FaMotorcycle, FaSignOutAlt } from "react-icons/fa";
 import Account from "./Account";
+import Password from "./Password";
+import Order from "./Order";
 
 const index = () => {
   const [tabs, setTabs] = useState(0);
@@ -63,6 +65,8 @@ const index = () => {
         </div>
       </div>
      { tabs===0 ? <Account /> : null}
+     {tabs===1 ? <Password /> : null}
+     {tabs===2 ? <Order/>:null}
     </div>
   );
 };

@@ -101,8 +101,8 @@ const Account = () => {
           />
         ))}
 
-        <div className="col-span-2 flex justify-center md:justify-start ">
-          <button type="submit" className="btn-primary mb-5 md:w-1/3 w-1/2">
+        <div className="col-span-1 flex justify-center md:justify-start ">
+          <button type="submit" className="btn-primary mb-5 w-1/2">
             Update
           </button>
         </div>

@@ -1,5 +1,4 @@
 import React from 'react'
-import Title from '../../components/layout/ui/Title'
 import Image from 'next/image'
 const index = () => {
   return (
