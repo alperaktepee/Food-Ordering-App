@@ -14,44 +14,46 @@ const Order = () => {
                 <thead className="text-xs text-gray-400 uppercase bg-gray-700">
                   <tr>
                     <th scope="col" className="py-3 px-6">
-                      ORDER ID
-                    </th>
-                    <th scope="col" className="py-3 px-6">
-                      DATE
+                      PRODUCT
                     </th>
                     <th scope="col" className="py-3 px-6">
                       CUSTOMER
                     </th>
                     <th scope="col" className="py-3 px-6">
-                      ADDRESS
-                    </th>
-                    <th scope="col" className="py-3 px-6">
                       TOTAL
                     </th>
                     <th scope="col" className="py-3 px-6">
+                      PAYMENT
+                    </th>
+                    <th scope="col" className="py-3 px-6">
                       STATUS
+                    </th>
+                    <th scope="col" className="py-3 px-6">
+                      ACTION
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="relative bg-secondary text-gray-400">
-                    <td className="py-4 px-6 flex items-center justify-center whitespace-nowrap font-medium">
-                      456345878933
-                    </td>
-                    <td className="py-4 px-6 whitespace-nowrap font-medium">
-                     <span>26/05/2023</span> 
+                  <td className="py-4 px-6 whitespace-nowrap font-medium">
+                    <span>63632453271</span>
                     </td>
                     <td className="py-4 px-6 whitespace-nowrap font-medium">
                       <span>Alper Aktepe</span>
                     </td>
                     <td className="py-4 px-6 whitespace-nowrap font-medium">
-                      <span>Manisa</span>
+                      <span>$18</span>
                     </td>
                     <td className="py-4 px-6 whitespace-nowrap font-medium">
-                      <span>$65</span>
+                      <span>Cash</span>
                     </td>
                     <td className="py-4 px-6 whitespace-nowrap font-medium">
                       <span>Preparing</span>
+                    </td>
+                    <td className="py-4 px-6 whitespace-nowrap font-medium">
+                      <span>
+                        <button className="bg-green-600 text-white rounded-md px-5 py-2">Next Stage</button>
+                      </span>
                     </td>
                   </tr>
                 </tbody>
