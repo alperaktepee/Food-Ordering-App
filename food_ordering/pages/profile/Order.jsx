@@ -42,7 +42,7 @@ const Order = () => {
                      <span>26/05/2023</span> 
                     </td>
                     <td className="py-4 px-6 whitespace-nowrap font-medium">
-                      <span>Alper Aktepe</span>
+                      <span>Camille Adamus</span>
                     </td>
                     <td className="py-4 px-6 whitespace-nowrap font-medium">
                       <span>Manisa</span>

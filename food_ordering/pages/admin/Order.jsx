@@ -39,7 +39,7 @@ const Order = () => {
                     <span>63632453271</span>
                     </td>
                     <td className="py-4 px-6 whitespace-nowrap font-medium">
-                      <span>Alper Aktepe</span>
+                      <span>Camille Adamus</span>
                     </td>
                     <td className="py-4 px-6 whitespace-nowrap font-medium">
                       <span>$18</span>

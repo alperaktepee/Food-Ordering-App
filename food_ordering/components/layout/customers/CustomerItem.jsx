@@ -12,7 +12,7 @@ const CustomerItem = () => {
           facere voluptatibus molestias.
         </p>
         <div className="mt-5">
-            <span className="text-lg font-semibold">Alper Aktepe</span>
+            <span className="text-lg font-semibold">Camille Adamus</span>
 
         </div>
       </div>

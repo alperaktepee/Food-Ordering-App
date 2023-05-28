@@ -1,8 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Title from "../../components/layout/ui/Title";
-
+import { useSelector,useDispatch } from "react-redux";
+import { reset } from "../../redux/cardSlice";
 const index = () => {
+  const card=useSelector((state)=>state.card)
+ const dispatch = useDispatch();
   return (
     <div>
       <div className="flex items-center lg:flex-row flex-col justify-between">
@@ -26,7 +29,8 @@ const index = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr className="relative bg-secondary text-gray-400">
+                {card.products.map((val)=>(
+                       <tr key={val.id} className="relative bg-secondary text-gray-400">
                   <td className="py-4 px-6 flex items-center justify-center whitespace-nowrap font-medium">
                     <Image
                       src="/images/f1.png"
@@ -34,18 +38,22 @@ const index = () => {
                       width={50}
                       height={50}
                     />
-                    <span className="mx-1">Good Pizza</span>
+                    <span className="mx-1">{val.name}</span>
                   </td>
                   <td className="py-4 px-6 whitespace-nowrap font-medium">
-                    <span>Mayonaisse, Ketchup, Hot Sauce</span>
+                    <span>{val.extras.map((item)=>(
+                     <span key={item.id}> {item.name},</span>
+                    ))}</span>
                   </td>
                   <td className="py-4 px-6 whitespace-nowrap font-medium">
-                    <span>$20</span>
+                    <span>${val.price}</span>
                   </td>
                   <td className="py-4 px-6 whitespace-nowrap font-medium">
-                    <span>1</span>
+                    <span>{val.quantity}</span>
                   </td>
-                </tr>
+                </tr>   
+                ))}
+        
               </tbody>
             </table>
           </div>
@@ -53,11 +61,11 @@ const index = () => {
         <div className="bg-secondary text-white mt-8 mb-8 lg:mt-0 lg:mb-0 lg:px-0 md:px-40 sm:px-24 xs:px-16">
           <Title addClass="text-3xl text-center mt-8 mb-8">Card Total</Title>
           <div className="flex flex-col items-center gap-1">
-            <span>Subtotal: $20.00</span>
+            <span>Subtotal: ${card.total}</span>
             <span>Discount: $0.00</span>
-            <span>Total: $20.00</span>
+            <span>Total: ${card.total}</span>
           </div>
-          <button className="btn btn-primary mt-8 mx-12 mb-8">
+          <button className="btn btn-primary mt-8 mx-12 mb-8" onClick={()=>dispatch(reset())}>
             Checkout Now
           </button>
         </div>

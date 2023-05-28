@@ -5,10 +5,12 @@ import Search from "./ui/Search";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 import {useRouter} from 'next/router'
 import Link from "next/link"
+import { useSelector } from "react-redux";
 const Header = () => {
   const [isSearchModal, setIsSearchModal] = useState(false);
   const [isMenuModal, setIsMenuModal] = useState(false);
 const router = useRouter();
+const card=useSelector((state)=>state.card)
 console.log("router as path:",router.asPath);
   const modalHandler = () => {
     setIsSearchModal(true);
@@ -48,12 +50,17 @@ console.log("router as path:",router.asPath);
             </button>
           )}
         </nav>
-        <div className="flex gap-x-4 items-center">
+        <div className="flex gap-x-6 items-center">
           <Link href="/auth/login">
             <FaUserAlt className="hover:text-primary transition-all" />
           </Link>
           <Link href="/card">
+            <span className="relative">
             <FaShoppingCart className="hover:text-primary transition-all" />
+<span className="w-5 h-5 text-sm text-black font-semibold rounded-full bg-primary grid place-content-center absolute bottom-2 left-3">
+  {!card.products.length?"0":card.products.length}</span>
+            </span>
+        
           </Link>
 
           <button onClick={modalHandler}>
